@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 4%;
+    --foreground: 230 50% 97%;
+    --card: 220 18% 8%;
+    --card-foreground: 230 50% 97%;
+    --popover: 220 18% 8%;
+    --popover-foreground: 230 50% 97%;
+    --primary: 0 80% 58%;
+    --primary-foreground: 220 20% 4%;
+    --secondary: 220 18% 12%;
+    --secondary-foreground: 230 50% 97%;
+    --muted: 220 18% 12%;
+    --muted-foreground: 230 10% 68%;
+    --accent: 0 80% 58%;
+    --accent-foreground: 220 20% 4%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 230 20% 18%;
+    --input: 230 20% 18%;
+    --ring: 0 80% 58%;
+    --radius: 0.625rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    background-color: #0B0C0F;
+  }
+}
+
+/* Typography */
+.font-display {
+  font-family: 'Sora', sans-serif;
+}
+
+.font-mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Noise overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Live pulse animation */
+@keyframes live-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.7;
+  }
+}
+
+.live-pulse {
+  animation: live-pulse 2s ease-in-out infinite;
+}
+
+/* Scan line animation */
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 45, 45, 0.5), transparent);
+  animation: scan-line 4s linear infinite;
+}
+
+/* Tech frame line */
+.tech-frame-line {
+  height: 1px;
+  background: rgba(244, 246, 255, 0.12);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0C0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(244, 246, 255, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(244, 246, 255, 0.3);
+}
+
+/* Section base */
+.section-pinned {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Image treatment */
+.image-cinematic {
+  filter: contrast(1.1) saturate(0.85);
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-[#FF2D2D] text-[#0B0C0F] font-semibold px-6 py-3 rounded-[10px] transition-all duration-300;
+}
+
+.btn-primary:hover {
+  @apply bg-[#ff4747] shadow-lg;
+  box-shadow: 0 8px 30px rgba(255, 45, 45, 0.3);
+}
+
+.btn-secondary {
+  @apply border border-[rgba(244,246,255,0.2)] text-[#F4F6FF] font-medium px-6 py-3 rounded-[10px] transition-all duration-300;
+}
+
+.btn-secondary:hover {
+  @apply border-[rgba(244,246,255,0.4)] bg-[rgba(244,246,255,0.05)];
+}
+
+/* Card styles */
+.card-glass {
+  background: rgba(20, 23, 31, 0.72);
+  border: 1px solid rgba(244, 246, 255, 0.12);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+/* Red dot */
+.red-dot {
+  width: 8px;
+  height: 8px;
+  background: #FF2D2D;
+  border-radius: 50%;
+}
+
+/* Form input styles */
+input, textarea, select {
+  @apply bg-[#14171F] border border-[rgba(244,246,255,0.12)] rounded-lg px-4 py-3 text-[#F4F6FF] placeholder:text-[#A6A9B6] focus:outline-none focus:border-[#FF2D2D] transition-colors;
+}
+
+/* Selection */
+::selection {
+  background: rgba(255, 45, 45, 0.3);
+  color: #F4F6FF;
+}
