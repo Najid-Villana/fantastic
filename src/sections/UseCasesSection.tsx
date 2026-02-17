@@ -2,6 +2,9 @@ import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Server, Radio, Factory } from 'lucide-react';
+import datacenterImage from '../../public/usecase_datacenter.jpg';
+import telecomImage from '../../public/usecase_telecom.jpg';
+import industrialImage from '../../public/usecase_industrial.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,19 +13,19 @@ const useCases = [
     icon: Server,
     title: 'Data Centers',
     description: 'Targeted suppression that protects servers from fire and water damage.',
-    image: '/usecase_datacenter.jpg',
+    image: datacenterImage,
   },
   {
     icon: Radio,
     title: 'Telecom & Utilities',
     description: '24/7 monitoring for remote shelters and power rooms.',
-    image: '/usecase_telecom.jpg',
+    image: telecomImage,
   },
   {
     icon: Factory,
     title: 'Industrial Plants',
     description: 'Rugged detection that adapts to dust, vibration, and variable lighting.',
-    image: '/usecase_industrial.jpg',
+    image: industrialImage,
   },
 ];
 

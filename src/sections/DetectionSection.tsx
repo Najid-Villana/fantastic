@@ -1,6 +1,7 @@
 import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import detectionImage from '../../public/detection_workshop.jpg';
 import { ArrowRight, Download } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -123,7 +124,7 @@ const DetectionSection = () => {
           className="absolute left-[6vw] top-[14vh] w-[90vw] lg:w-[44vw] h-[35vh] lg:h-[72vh] rounded-2xl overflow-hidden"
         >
           <img
-            src="/detection_workshop.jpg"
+            src={detectionImage}
             alt="AI detection and targeting"
             className="w-full h-full object-cover image-cinematic"
           />

@@ -1,6 +1,7 @@
 import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import dashboardImage from '../../public/dashboard_ui.jpg';
 import { ArrowRight, Wifi } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -184,7 +185,7 @@ const MonitoringSection = () => {
           className="absolute right-[6vw] top-[14vh] w-[90vw] lg:w-[44vw] h-[35vh] lg:h-[72vh] rounded-2xl overflow-hidden"
         >
           <img
-            src="/dashboard_ui.jpg"
+            src={dashboardImage}
             alt="Monitoring dashboard"
             className="w-full h-full object-cover image-cinematic"
           />

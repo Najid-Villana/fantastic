@@ -1,6 +1,7 @@
 import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import modularImage from '../../public/modular_components.jpg';
 import { ArrowRight, FileText } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -168,7 +169,7 @@ const ModularSection = () => {
           className="absolute right-[6vw] top-[14vh] w-[90vw] lg:w-[44vw] h-[35vh] lg:h-[72vh] rounded-2xl overflow-hidden"
         >
           <img
-            src="/modular_components.jpg"
+            src={modularImage}
             alt="Modular components"
             className="w-full h-full object-cover image-cinematic"
           />

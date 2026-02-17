@@ -2,6 +2,7 @@ import { useEffect, useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Play, ArrowRight } from 'lucide-react';
+import heroImage from '../../public/hero_robot_wide.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -163,7 +164,7 @@ const HeroSection = () => {
         style={{ opacity: 0 }}
       >
         <img
-          src="/hero_robot_wide.jpg"
+          src={heroImage}
           alt="Autonomous fire suppression robot"
           className="w-full h-full object-cover image-cinematic"
         />
